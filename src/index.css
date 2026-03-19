@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 33% 96%;
+    --foreground: 160 25% 18%;
+
+    --card: 38 33% 96%;
+    --card-foreground: 160 25% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 25% 18%;
+
+    --primary: 20 55% 55%;
+    --primary-foreground: 38 33% 96%;
+
+    --secondary: 38 25% 90%;
+    --secondary-foreground: 160 25% 18%;
+
+    --muted: 38 20% 92%;
+    --muted-foreground: 160 10% 45%;
+
+    --accent: 160 25% 18%;
+    --accent-foreground: 38 33% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 0% / 0.08;
+    --input: 38 20% 88%;
+    --ring: 160 25% 18%;
+
+    --radius: 1.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --terracotta: 20 55% 55%;
+    --terracotta-light: 20 55% 65%;
+    --forest: 160 25% 18%;
+    --forest-light: 160 20% 30%;
+    --bone: 38 33% 96%;
+    --sand: 38 25% 90%;
+    --warm-grey: 30 10% 60%;
+
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Hanken Grotesk', sans-serif;
+  }
+
+  .dark {
+    --background: 160 25% 8%;
+    --foreground: 38 33% 96%;
+    --card: 160 25% 10%;
+    --card-foreground: 38 33% 96%;
+    --popover: 160 25% 10%;
+    --popover-foreground: 38 33% 96%;
+    --primary: 20 55% 55%;
+    --primary-foreground: 38 33% 96%;
+    --secondary: 160 20% 15%;
+    --secondary-foreground: 38 33% 96%;
+    --muted: 160 15% 15%;
+    --muted-foreground: 38 15% 65%;
+    --accent: 20 55% 55%;
+    --accent-foreground: 38 33% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 0 0% 100% / 0.08;
+    --input: 160 15% 15%;
+    --ring: 20 55% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    color: hsl(var(--forest));
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-terracotta {
+    color: hsl(var(--terracotta));
+  }
+  .text-forest {
+    color: hsl(var(--forest));
+  }
+  .bg-terracotta {
+    background-color: hsl(var(--terracotta));
+  }
+  .bg-forest {
+    background-color: hsl(var(--forest));
+  }
+  .bg-bone {
+    background-color: hsl(var(--bone));
+  }
+  .bg-sand {
+    background-color: hsl(var(--sand));
+  }
+  .border-forest {
+    border-color: hsl(var(--forest));
+  }
+}
