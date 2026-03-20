@@ -31,7 +31,11 @@ const Navbar = () => {
         <div className='flex h-20 items-center justify-between rounded-[2rem] border border-white/70 bg-white/75 px-6 shadow-[0_16px_45px_rgba(123,92,229,0.12)] backdrop-blur-xl'>
           <a href='#home' className='flex items-center gap-3'>
             <div className='flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#fff0f8,#efe8ff)]'>
-              <img src={logo} alt='Diamant Pet Care' className='h-10 w-10 object-contain' />
+              <img
+                src={logo}
+                alt='Diamant Pet Care'
+                className='h-8 w-8 object-contain'
+              />
             </div>
             <span className='font-body text-xl font-extrabold tracking-[-0.04em] text-[#7b5ce5]'>
               Diamant<span className='text-[#ff4fb0]'>Pets</span>

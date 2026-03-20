@@ -52,13 +52,19 @@ const FooterSection = () => {
             <div>
               <div className='mb-4 flex items-center gap-3'>
                 <div className='flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#fff0f8,#efe8ff)]'>
-                  <img src={logo} alt='Diamant' className='h-10 w-10 object-contain' />
+                  <img
+                    src={logo}
+                    alt='Diamant'
+                    className='h-8 w-8 object-contain'
+                  />
                 </div>
                 <span className='font-body text-xl font-extrabold tracking-[-0.04em] text-[#7b5ce5]'>
                   Diamant<span className='text-[#ff4fb0]'>Pets</span>
                 </span>
               </div>
-              <p className='text-sm leading-7 text-[#686379]'>{t('footer.desc')}</p>
+              <p className='text-sm leading-7 text-[#686379]'>
+                {t('footer.desc')}
+              </p>
             </div>
 
             <div>
@@ -92,14 +98,18 @@ const FooterSection = () => {
                 {t('footer.contactDesc')}
               </p>
               <a
-                href={waUrl(lang === 'id' ? 'saya ingin bertanya.' : 'I have a question.')}
+                href={waUrl(
+                  lang === 'id' ? 'saya ingin bertanya.' : 'I have a question.',
+                )}
                 target='_blank'
                 rel='noopener noreferrer'
                 className='mt-5 inline-flex items-center rounded-full bg-[#ff4fb0] px-5 py-3 text-sm font-bold text-white shadow-[0_12px_30px_rgba(255,79,176,0.18)] transition-transform duration-200 hover:-translate-y-0.5'
               >
                 WhatsApp Us
               </a>
-              <p className='mt-5 text-sm text-[#686379]'>Jl. Raya Leuwinanggung RT.01</p>
+              <p className='mt-5 text-sm text-[#686379]'>
+                Jl. Raya Leuwinanggung RT.01
+              </p>
               <p className='text-sm text-[#686379]'>Kota Depok, Jawa Barat</p>
             </div>
 
@@ -108,10 +118,16 @@ const FooterSection = () => {
                 {t('footer.workingHours')}
               </h4>
               <p className='mt-4 text-sm leading-7 text-[#686379]'>
-                <span className='font-bold text-[#7b5ce5]'>{t('footer.monSat')}</span> 10.00 - 22.00
+                <span className='font-bold text-[#7b5ce5]'>
+                  {t('footer.monSat')}
+                </span>{' '}
+                10.00 - 22.00
               </p>
               <p className='text-sm leading-7 text-[#686379]'>
-                <span className='font-bold text-[#7b5ce5]'>{t('footer.sunday')}</span> {t('footer.closed')}
+                <span className='font-bold text-[#7b5ce5]'>
+                  {t('footer.sunday')}
+                </span>{' '}
+                {t('footer.closed')}
               </p>
               <p className='mt-6 text-sm font-bold uppercase tracking-[0.18em] text-[#ff4fb0]'>
                 {t('footer.newsletter')}
