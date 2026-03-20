@@ -1,5 +1,6 @@
 import heroDog from '@/assets/hero-dog.png';
 import heroVet from '@/assets/hero-vet.png';
+import heroBgV2 from '@/assets/hero-bg-v2.png';
 import { Heart, PawPrint, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -37,9 +38,13 @@ const HeroSection = () => {
       className='relative isolate min-h-screen overflow-hidden bg-[#fff9fd]'
     >
       <div className='absolute inset-0'>
-        <div className='absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(123,92,229,0.18),transparent_32%),radial-gradient(circle_at_left,_rgba(255,211,84,0.2),transparent_24%),radial-gradient(circle_at_right,_rgba(255,79,176,0.18),transparent_28%),linear-gradient(180deg,#fffefe_0%,#fff7fc_65%,#fff4fb_100%)]' />
-        <div className='absolute inset-0 bg-white/70' />
-        <div className='absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-[#eddfff]/40 blur-3xl' />
+        <img
+          src={heroBgV2}
+          alt='Pet Clinic'
+          className='h-full w-full object-cover object-[center_20%] opacity-55'
+        />
+        <div className='absolute inset-0 bg-gradient-to-b from-white/30 via-[#fff9fd]/60 to-[#fff9fd]' />
+        <div className='absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(123,92,229,0.12),transparent_40%),radial-gradient(circle_at_bottom_left,_rgba(255,79,176,0.1),transparent_40%)]' />
       </div>
 
       <div className='relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-10 pt-28 md:pt-32'>
@@ -125,7 +130,9 @@ const HeroSection = () => {
           <div className='grid gap-6 md:grid-cols-3 md:gap-0'>
             {stats.map((stat, i) => (
               <div key={stat.labelKey} className='relative text-center'>
-                <p className={`font-body text-4xl font-extrabold tracking-[-0.04em] ${stat.accent}`}>
+                <p
+                  className={`font-body text-4xl font-extrabold tracking-[-0.04em] ${stat.accent}`}
+                >
                   {stat.num}
                 </p>
                 <p className='mt-1 text-lg font-medium leading-7 text-[#676278]'>
