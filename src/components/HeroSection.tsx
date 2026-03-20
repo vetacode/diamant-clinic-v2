@@ -3,6 +3,7 @@ import heroVet from '@/assets/hero-vet.png';
 import heroBgV2 from '@/assets/hero-bg-v2.png';
 import { Heart, PawPrint, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useEffect, useState } from 'react';
 
 const serviceCards = [
   {
@@ -31,6 +32,15 @@ const frameShape = {
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffsetY(window.pageYOffset);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <section
@@ -41,10 +51,14 @@ const HeroSection = () => {
         <img
           src={heroBgV2}
           alt='Pet Clinic'
-          className='h-full w-full object-cover object-[center_20%] opacity-55'
+          className='h-full w-full object-cover object-[center_20%] opacity-55 transition-transform duration-75 ease-out'
+          style={{ transform: `translateY(${offsetY * 0.4}px)` }}
         />
         <div className='absolute inset-0 bg-gradient-to-b from-white/30 via-[#fff9fd]/60 to-[#fff9fd]' />
-        <div className='absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(123,92,229,0.12),transparent_40%),radial-gradient(circle_at_bottom_left,_rgba(255,79,176,0.1),transparent_40%)]' />
+        <div 
+          className='absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(123,92,229,0.12),transparent_40%),radial-gradient(circle_at_bottom_left,_rgba(255,79,176,0.1),transparent_40%)]'
+          style={{ transform: `translateY(${offsetY * 0.2}px)` }}
+        />
       </div>
 
       <div className='relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pb-10 pt-28 md:pt-32'>
@@ -58,7 +72,8 @@ const HeroSection = () => {
               <img
                 src={heroDog}
                 alt='Happy dog'
-                className='relative z-10 mx-auto w-full max-w-[240px] object-contain drop-shadow-[0_18px_30px_rgba(180,117,18,0.18)]'
+                className='relative z-10 mx-auto w-full max-w-[240px] object-contain drop-shadow-[0_18px_30px_rgba(180,117,18,0.18)] transition-transform duration-75 ease-out'
+                style={{ transform: `translateY(${offsetY * -0.1}px)` }}
               />
             </div>
           </div>
@@ -120,7 +135,8 @@ const HeroSection = () => {
               <img
                 src={heroVet}
                 alt='Veterinarian with pet'
-                className='relative z-10 mx-auto w-full max-w-[250px] object-contain drop-shadow-[0_18px_30px_rgba(123,92,229,0.2)]'
+                className='relative z-10 mx-auto w-full max-w-[250px] object-contain drop-shadow-[0_18px_30px_rgba(123,92,229,0.2)] transition-transform duration-75 ease-out'
+                style={{ transform: `translateY(${offsetY * -0.15}px)` }}
               />
             </div>
           </div>
