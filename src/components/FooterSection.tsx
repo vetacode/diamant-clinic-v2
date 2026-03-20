@@ -76,7 +76,7 @@ const FooterSection = () => {
                   { key: 'footer.aboutUs', href: '#about' },
                   { key: 'footer.services', href: '#services' },
                   { key: 'footer.ourTeam', href: '#pet-care' },
-                  { key: 'footer.gallery', href: '#contact' },
+                  { key: 'footer.gallery', href: '#home' },
                 ].map((item) => (
                   <li key={item.key}>
                     <a
